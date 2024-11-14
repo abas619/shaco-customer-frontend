@@ -1,0 +1,28 @@
+/*#region ----------------- Loading */
+.loader {
+  @include displayFlex(flex, center, center);
+  flex-direction: column;
+  padding: 40px 0;
+  .load-spin {
+    border: 5px solid rgba($color: #000000, $alpha: 0.1);
+    border-top: 5px solid $primary;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    animation: spin 1s linear infinite;
+  }
+  .load-title {
+    margin: 10px 0 0 0;
+    color: $textGrey;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*#endregion -------------- Loading */

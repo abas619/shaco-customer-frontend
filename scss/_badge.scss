@@ -1,0 +1,36 @@
+/*#region ----------------- Badge */
+.badge {
+  background-color: $textSilver;
+  color: white;
+  font-size: 14px;
+  padding: 2px 8px;
+  border-radius: 50px;
+  &.badge-success {
+    background-color: $success;
+  }
+  &.badge-danger {
+    background-color: $error;
+  }
+  &.badge-primary {
+    background-color: $primary;
+  }
+  &.badge-secondary {
+    background-color: $secondary;
+    color: white;
+  }
+  &.badge-s {
+    font-size: 13px;
+  }
+  &.badge-m {
+    font-size: 14px;
+  }
+  &.badge-lg {
+    font-size: 16px;
+  }
+  &.dot {
+    padding: 0;
+    width: 10px;
+    height: 10px;
+  }
+}
+/*#endregion -------------- Badge */

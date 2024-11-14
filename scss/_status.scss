@@ -1,0 +1,142 @@
+/*#region ----------------- Status */
+.card-status {
+  margin-bottom: 16px;
+  .card-inner {
+    background-color: white;
+    border: 1px solid $borderColor;
+    border-radius: $radius_Small;
+    display: block;
+    padding: 15px;
+    transition: all 0.15s ease-in-out;
+  }
+  .name {
+    @include displayFlex(flex, center, space-between);
+    h6 {
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: 500;
+      .fi {
+        margin-left: 8px;
+        font-size: 18px;
+        position: relative;
+        color: $textGrey;
+        top: 3px;
+      }
+    }
+    .arrow {
+      width: 24px;
+      height: 24px;
+      background-color: $background_light2;
+      color: $textGrey;
+      border-radius: 50%;
+      @include displayFlex(flex, center, center);
+      .fi {
+        display: flex;
+      }
+    }
+  }
+  .desc {
+    margin-top: 30px;
+    @include displayFlex(flex, center, flex-end);
+    h5 {
+      margin-bottom: 0;
+      font-weight: 800;
+    }
+    span {
+      font-size: 14px;
+      color: $textGrey;
+      margin-right: 5px;
+    }
+  }
+  &.color-primary {
+    .card-inner {
+      border-color: $primary;
+    }
+    .name {
+      .arrow {
+        background-color: $primary;
+        color: white;
+      }
+    }
+    .desc {
+      h5,
+      span {
+        color: $primary;
+      }
+    }
+    &:hover {
+      .card-inner {
+        background-color: $primary;
+      }
+      .name {
+        h6 {
+          color: white;
+          .fi {
+            color: white;
+          }
+        }
+        .arrow {
+          background-color: white;
+          color: $primary;
+        }
+      }
+      .desc {
+        h5,
+        span {
+          color: white;
+        }
+      }
+    }
+  }
+  &.color-secondary {
+    .card-inner {
+      border-color: $secondary;
+    }
+    .name {
+      .arrow {
+        background-color: $secondary;
+        color: white;
+      }
+    }
+    .desc {
+      h5,
+      span {
+        color: $secondary;
+      }
+    }
+    &:hover {
+      .card-inner {
+        background-color: $secondary;
+      }
+      .name {
+        h6 {
+          color: white;
+          .fi {
+            color: white;
+          }
+        }
+        .arrow {
+          background-color: white;
+          color: $secondary;
+        }
+      }
+      .desc {
+        h5,
+        span {
+          color: white;
+        }
+      }
+    }
+  }
+  &.type-small {
+    .card-inner {
+      @include displayFlex(flex, center, space-between);
+      padding: 15px;
+    }
+    .desc {
+      margin-top: 0;
+    }
+  }
+}
+
+/*#endregion -------------- Status */

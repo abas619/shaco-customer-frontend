@@ -1,0 +1,247 @@
+/*#region ----------------- Buttons */
+.btn {
+  font-size: $fontSize_Small;
+  padding: 0.7rem 1.2rem;
+  border-radius: $radius_Small;
+  border: 1px solid transparent;
+  // min-width: 120px;
+  box-shadow: none;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  &:hover,
+  &:focus {
+    box-shadow: none !important;
+  }
+  .fi {
+    font-size: 20px;
+    line-height: 0;
+  }
+  &:disabled {
+    background-color: $background !important;
+    border: 1px solid $textSilver !important;
+    color: $textGrey;
+  }
+  &.text-right {
+    text-align: right;
+  }
+  &.text-left {
+    text-align: left;
+  }
+  &.btn-small {
+    font-size: 14px;
+    padding: 0.544rem 1rem;
+    min-width: unset;
+    .fi {
+      font-size: 18px;
+    }
+    &.icon-right {
+      padding-right: 2.3rem !important;
+      .fi {
+        right: 10px;
+        top: 10px;
+      }
+    }
+    &.icon-left {
+      padding-left: 2.3rem !important;
+      .fi {
+        left: 10px;
+        top: 10px;
+      }
+    }
+  }
+}
+.icon-right {
+  padding-right: 3rem !important;
+  .fi {
+    position: absolute;
+    right: 14px;
+    top: 10px;
+  }
+}
+.icon-left {
+  padding-left: 3rem !important;
+  .fi {
+    position: absolute;
+    left: 14px;
+    top: 10px;
+  }
+}
+
+.btn-primary {
+  background: $primary;
+  color: white;
+  border-color: $primary;
+  &:hover,
+  &:focus {
+    background-color: lighten($color: $primary, $amount: 8);
+    color: white;
+  }
+  &.color-danger {
+    background-color: $error;
+    color: white;
+    border-color: $error;
+  }
+  &.color-white {
+    background-color: white;
+    color: $primary;
+    border-color: white;
+  }
+}
+
+.btn-secondary {
+  background: $secondary;
+  color: white;
+  border-color: $secondary;
+  &:hover,
+  &:focus {
+    background-color: lighten($color: $secondary, $amount: 8);
+    border-color: lighten($color: $secondary, $amount: 8);
+    color: white;
+  }
+}
+
+.btn-primary-outline {
+  background: transparent;
+  color: $primary;
+  border-color: $primary;
+  &::before {
+    background-color: rgba($color: $primary, $alpha: 0.3);
+  }
+  &:hover,
+  &:focus {
+    background: rgba($color: $primary, $alpha: 0.15);
+    color: $primary;
+  }
+  &.color-red {
+    border-color: $error;
+    color: $error;
+    &:hover,
+    &:focus {
+      background-color: rgba($color: $error, $alpha: 0.1);
+    }
+  }
+  &.color-gray {
+    border-color: $textSilver;
+  }
+}
+
+.btn-secondary-outline {
+  background: transparent;
+  color: $secondary;
+  border-color: $secondary;
+  &::before {
+    background-color: rgba($color: $secondary, $alpha: 0.3);
+  }
+  &:hover,
+  &:focus {
+    background: rgba($color: $secondary, $alpha: 0.15);
+    color: $secondary;
+  }
+}
+
+.btn-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  @include displayFlex(flex, center, center);
+  border: 1px solid transparent;
+  background-color: rgba($color: #000000, $alpha: 0.1);
+  color: $textGrey;
+  .fi {
+    display: flex;
+    font-size: 18px;
+  }
+  &.size-big {
+    width: 48px;
+    height: 48px;
+  }
+  &:hover,
+  &:focus {
+    background-color: rgba($color: #000000, $alpha: 0.2);
+    color: $textGrey;
+  }
+  &.color-blue {
+    background-color: $info;
+    color: white;
+    &:hover,
+    &:focus {
+      background-color: darken($color: $info, $amount: 8);
+    }
+  }
+  &.color-red {
+    background-color: $error;
+    color: white;
+    &:hover,
+    &:focus {
+      background-color: darken($color: $error, $amount: 8);
+    }
+  }
+  &.color-green {
+    background-color: $success;
+    color: white;
+    &:hover,
+    &:focus {
+      background-color: darken($color: $success, $amount: 8);
+    }
+  }
+  &.color-orange {
+    background-color: $warning;
+    color: white;
+    &:hover,
+    &:focus {
+      background-color: darken($color: $warning, $amount: 8);
+    }
+  }
+  &.color-primary {
+    background-color: $primary;
+    color: white;
+    &:hover,
+    &:focus {
+      background-color: darken($color: $primary, $amount: 8);
+    }
+  }
+}
+
+// For Collapse Buttons
+.btn-collapse {
+  width: 100%;
+  text-align: right;
+  color: $textDark;
+  position: relative;
+  .icon {
+    transition: all 0.2s ease-in-out;
+    transform: rotate(0deg);
+    &.icon-plus {
+      transform: unset;
+      &::before {
+        content: "\f80d";
+        position: absolute;
+        font-family: $iconFont_Regular;
+        color: $textSilver;
+      }
+    }
+  }
+  &.active {
+    .icon {
+      transform: rotate(-90deg);
+      &.icon-plus {
+        transform: unset;
+        &::before {
+          content: "\f730";
+        }
+      }
+    }
+  }
+}
+.card-collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+/*#endregion -------------- Buttons */

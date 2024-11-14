@@ -1,0 +1,52 @@
+/*#region ----------------- Page Title */
+.page-title {
+  margin: 0.5rem 0 1.5rem 0;
+  &.align-center {
+    .title-inner {
+      text-align: center;
+    }
+  }
+  &.align-right {
+    @include displayFlex(flex, center, space-between);
+  }
+  h2 {
+    font-size: 1.65rem;
+    color: $textDark;
+    margin-bottom: 10px;
+  }
+  p {
+    color: $textGrey;
+    margin-bottom: 0;
+  }
+  .btn-link {
+    color: $primary;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    .fi {
+      margin-right: 5px;
+      display: flex;
+      font-size: 20px;
+    }
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .page-title {
+    h2 {
+      font-size: 1.45rem;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .page-title {
+    h2 {
+      font-size: 1.35rem;
+    }
+  }
+}
+
+/*#endregion -------------- Page Title */

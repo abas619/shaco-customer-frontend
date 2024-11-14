@@ -1,0 +1,105 @@
+/*#region ----------------- Login */
+.wrapper-login {
+  min-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg-login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  .inner {
+    min-height: 100vh;
+    position: relative;
+    z-index: 50;
+    padding: 3rem 1rem;
+    @include displayFlex(flex, center, center);
+    flex-direction: column;
+  }
+  .login-content {
+    background-color: rgba($color: white, $alpha: 0.4);
+    border: 1px solid white;
+    backdrop-filter: blur(20px);
+    width: 550px;
+    margin: 0 auto;
+    border-radius: $radius_Small;
+    box-shadow: $boxshadow_2;
+    padding: 40px;
+  }
+  .logo {
+    width: 150px;
+    margin: 0 auto 2rem auto;
+    a {
+      @include displayFlex(flex, center, center);
+    }
+  }
+}
+
+.login-section {
+  display: none;
+  &.active {
+    display: block;
+  }
+  .links-content {
+    @include displayFlex(flex, center, space-between);
+  }
+  .showCountdown {
+    font-size: 17px;
+    font-weight: 500;
+    color: $textDark;
+    padding: 0 20px;
+  }
+  .btn-resend-sms {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: $secondary;
+    text-decoration: underline 1px dashed $secondary;
+  }
+  .btn-change-number {
+    background-color: transparent;
+    font-size: 14px;
+    color: $secondary;
+    border: none;
+    .fi {
+      margin-left: 6px;
+      font-size: 16px;
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .wrapper-login {
+    .login-content {
+      padding: 35px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .wrapper-login {
+    .login-content {
+      width: 90%;
+      padding: 30px;
+    }
+  }
+}
+@media (max-width: 640px) {
+  .wrapper-login {
+    .login-content {
+      padding: 15px;
+    }
+  }
+}
+
+/*#endregion -------------- Login */

@@ -1,0 +1,74 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+  .dropdown-toggle {
+    &.rounded-lg {
+      border-radius: 10px;
+    }
+    &.bg-white {
+      background-color: transparent;
+      &:hover {
+        background-color: $background_light1;
+      }
+    }
+    &.btn-icon {
+      width: 42px;
+      height: 42px;
+      padding: 5px;
+      @include displayFlex(flex, center, center);
+      color: $textSilver;
+      &::before {
+        content: "\f70e";
+        font-family: $iconFont_Regular;
+        font-size: 22px;
+      }
+    }
+    .fi {
+      display: block;
+      font-size: 22px;
+    }
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 170px;
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: $boxshadow_1;
+    border-radius: $radius_Small;
+    z-index: 1;
+    text-align: right;
+    padding: 5px;
+    .dropdown-item {
+      padding: 8px 10px;
+      text-decoration: none;
+      color: $textDark;
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 8px;
+      white-space: nowrap;
+      user-select: none;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba($color: $primary, $alpha: 0.1);
+        color: $primary;
+        .fi {
+          color: $primary;
+        }
+      }
+      .fi {
+        margin-left: 10px;
+        font-size: 18px;
+        position: relative;
+        top: 3px;
+        color: $textSilver;
+      }
+    }
+    &.open {
+      display: flex;
+    }
+  }
+}

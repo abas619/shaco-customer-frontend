@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fa" class="no-js" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0e4fc7" />
+    <meta name="msapplication-navbutton-color" content="#0e4fc7">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0e4fc7">
+    <title>Shaco | پنل مدیریت</title>
+    <script src="js/tailwindcss.js"></script>
+    <script src="js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="scss/main.css" />
+
+    <!-- Font Icons -->
+    <link href="css/uicons-regular-straight.css" rel="stylesheet" type="text/css" />
+    <link href="css/uicons-solid-straight.css" rel="stylesheet" type="text/css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/small-icon.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logo-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/logo-114x114.png" />
+
+</head>
+
+<body>
+
+    <div class="wrapper-login">
+        <div class="inner">
+            <div class="login-content">
+
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="">
+                    </a>
+                </div>
+
+                <div class="login-section active">
+                    <div class="form-content">
+                        <div class="input-group">
+                            <label>شماره همراه (بدون صفر)</label>
+                            <input type="text" placeholder="شماره همراه خود را وارد کنید" class="input">
+                            <div class="text-red-500 text-xs mt-2">شماره همراه را صحیح وارد کنید</div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="button" class="btn btn-primary icon-left"
+                            onclick="showModalSignContent(1),startTimer('1',10)"><i
+                                class="fi fi-rs-arrow-left"></i>ادامه</button>
+                    </div>
+                </div>
+
+                <div class="login-section">
+                    <div class="form-content">
+                        <div class="input-group no-icon big-font-size">
+                            <label>کد پیامک شده را وارد کنید</label>
+                            <input type="text" placeholder="- - - -" class="input text-center ">
+                        </div>
+                    </div>
+                    <div class="links-content">
+                        <div class="resend-number">
+                            <div class="showCountdown">
+                                <span id="timer1">01:00</span>
+                            </div>
+                            <div class="btn-resend-sms btn-resend_1" onclick="startTimer('1',10)">
+                                <span>ارسال مجدد</span>
+                            </div>
+                        </div>
+                        <div class="change-number">
+                            <button type="button" class="btn-change-number" onclick="showModalSignContent(0)"><i
+                                    class="fi fi-rr-pencil"></i>تغییر
+                                شماره همراه</button>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="#" class="btn btn-primary-outline icon-right mx-1" onclick="showModalSignContent(0)"><i
+                                class="fi fi-rs-arrow-right"></i>بازگشت</a>
+                        <button type="button" class="btn btn-primary icon-left mx-1"><i
+                                class="fi fi-rs-check"></i>ورود</button>
+                    </div>
+                </div>
+
+                <!-- Loading -->
+                <div class="loader active">
+                    <div class="load-spin"></div>
+                    <div class="load-title">لطفا کمی صبر کنید</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/scripts.js"></script>
+    <script src="js/timer.js"></script>
+
+</body>
+
+</html>
