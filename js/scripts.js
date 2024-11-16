@@ -108,6 +108,7 @@ if (document.querySelector(".btn-basket") !== null) {
     body.classList.remove("fixedposition");
   });
 }
+
 // For Delete Item from side Basket
 function deleteBasktet_item(el) {
   el.parentElement.parentElement.parentElement.parentElement.remove();
@@ -124,4 +125,64 @@ function showModalSignContent(num) {
     modalSignContent[i].classList.remove("active");
   }
   modalSignContent[num].classList.add("active");
+}
+
+// Change Cart Value
+function changeValue(inputId, increment) {
+  var input = document.getElementById(inputId);
+  var value = parseInt(input.innerHTML);
+
+  if (increment && value < 10) {
+    value++;
+  } else if (!increment && value > 0) {
+    value--;
+  }
+
+  input.innerHTML = value;
+
+  if (value === 0) {
+    var cartItem =
+      input.parentElement.parentElement.parentElement.parentElement
+        .parentElement;
+    cartItem.parentElement.removeChild(cartItem);
+  }
+}
+
+// Payment
+if (document.getElementById("list-payment") != null) {
+  document
+    .getElementById("add-form-payment")
+    .addEventListener("click", function () {
+      // ایجاد یک عنصر جدید برای لیست پرداخت
+      const paymentItem = document.createElement("div");
+      paymentItem.className = "card-payment flex flex-row gap-2 mb-3";
+
+      // محتوای HTML مربوط به آیتم جدید
+      paymentItem.innerHTML = `
+          <div class="input-group basis-2/5 m-0">
+              <input type="number" class="input !sm:text-md !text-sm"
+                  placeholder="به تومان وارد کنید">
+          </div>
+          <div class="input-group basis-2/5 m-0">
+              <input type="text" class="input !sm:text-md !text-sm"
+                  placeholder="انتخاب تاریخ">
+          </div>
+          <div class="btns-group basis-1/5">
+              <button class="btn btn-primary-outline w-full remove-item">حذف</button>
+          </div>
+      `;
+
+      // اضافه کردن آیتم به لیست پرداخت
+      document.getElementById("list-payment").appendChild(paymentItem);
+    });
+
+  // مدیریت دکمه حذف
+  document
+    .getElementById("list-payment")
+    .addEventListener("click", function (event) {
+      if (event.target.classList.contains("remove-item")) {
+        // حذف آیتم مربوطه
+        event.target.closest(".card-payment").remove();
+      }
+    });
 }

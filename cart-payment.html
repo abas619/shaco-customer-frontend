@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fa" class="no-js" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0e4fc7" />
+    <meta name="msapplication-navbutton-color" content="#0e4fc7">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0e4fc7">
+    <title>Shaco | پنل مدیریت</title>
+    <script src="js/tailwindcss.js"></script>
+    <script src="js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="scss/main.css" />
+    <!-- <link rel="stylesheet" href="plugins/jsPersianCal/js-persian-cal.css" /> -->
+
+    <!-- Font Icons -->
+    <link href="css/uicons-regular-straight.css" rel="stylesheet" type="text/css" />
+    <link href="css/uicons-solid-straight.css" rel="stylesheet" type="text/css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/small-icon.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logo-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/logo-114x114.png" />
+
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!--Sidebar-->
+        <nav id="sidebar">
+            <button class="btn-close-sidebar"><i class="fi fi-rs-cross"></i></button>
+            <div class="logo">
+                <img src="images/logo.png" alt="logo">
+            </div>
+            <ul class="list-nav">
+                <li class="nav-item">
+                    <a class="sub-item" href="index.html">
+                        <i class="fi fi-rs-apps"></i><span class="title">داشبورد</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="sub-item" href="user-profile.html">
+                        <i class="fi fi-rs-user"></i><span class="title">اطلاعات پروفایل</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="sub-item" href="products-list.html">
+                        <i class="fi fi-rs-box"></i><span class="title">محصولات</span>
+                        <div class="badge badge-secondary badge-s">5</div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="sub-item" href="points-list.html">
+                        <i class="fi fi-rs-star"></i><span class="title">لیست امتیازات</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="sub-item" href="support.html">
+                        <i class="fi fi-rs-messages"></i><span class="title">پشتیبانی</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="siderbar-overlay"></div>
+        <!--Page Content-->
+        <div id="content">
+            <nav id="mynavbar">
+                <div class="collapse-sidebar">
+                    <button type="button" id="sidebarCollapse" class="btn btn-side">
+                        <span class="menu-lines">
+                            <span class="line line-1"></span>
+                            <span class="line line-2"></span>
+                            <span class="line line-3"></span>
+                        </span>
+                    </button>
+                </div>
+                <div class="logo">
+                    <img src="images/logo.png" alt="logo">
+                </div>
+                <div class="admin">
+                    <div class="item">
+                        <button class="btn-navbar btn-basket">
+                            <i class="fi fi-rs-shopping-bag"></i>
+                            <div class="badge badge-danger badge-s">13</div>
+                        </button>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary-outline dropdown-toggle icon-right" type="button">
+                            <i class="fi fi-rs-user"></i>
+                            <span>نام کاربری</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="https://shacoiran.ir/" class="dropdown-item"><i class="fi fi-rs-eye"></i>
+                                مشاهده سایت شاکو
+                            </a>
+                            <a href="#" class="dropdown-item"><i class="fi fi-rs-settings"></i>
+                                تنظیمات
+                            </a>
+                            <hr class="my-2">
+                            <a href="login.html" class="dropdown-item" data-modal-name="modal-exit"><i
+                                    class="fi fi-rs-exit"></i>خروج از پنل</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!--Body Content-->
+            <div class="main-body-content">
+                <div class="main-header">
+                    <div class="inner">
+                        <div class="title">
+                            <h2><i class="fi fi-rs-shopping-bag"></i>سبد خرید</h2>
+                        </div>
+                        <div class="btns-action">
+                            <a href="cart-items-list.html" class="btn btn-secondary-outline btn-small icon-left"><i
+                                    class="fi fi-rs-arrow-small-left"></i><span>بازگشت</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-inner">
+                    <div class="cart-details-section">
+                        <div class="grid-layout">
+                            <div class="basket-grid">
+                                <!-- پرداخت -->
+                                <div class="mb-4">
+                                    <h4 class="text-lg font-bold mb-2">نحوه پرداخت</h4>
+                                    <p class="text-sm text-black-200"> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+                                        از
+                                        صنعت چاپ، و با
+                                        استفاده از
+                                        طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله است.</p>
+                                </div>
+                                <div class="p-5 my-3 border border-borderColor rounded-md">
+                                    <h4 class="text-md font-bold mb-4">پرداخت نقدی (تومان)</h4>
+                                    <div class="grid grid-cols-[1fr,100px] gap-2">
+                                        <div class="input-group m-0">
+                                            <input type="number" class="input" placeholder="به تومان وارد کنید">
+                                        </div>
+                                        <div class="btns-action">
+                                            <button class="btn btn-primary w-full">ثبت</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="installment-payment-section p-5 my-3 border border-borderColor rounded-md">
+                                    <h4 class="text-md font-bold mb-4">پرداخت قسطی (تومان)</h4>
+                                    <div id="list-payment">
+                                        <div class="card-payment flex flex-row gap-2 mb-3">
+                                            <div class="input-group basis-2/5 m-0">
+                                                <input type="number" class="input !sm:text-md !text-sm"
+                                                    placeholder="به تومان وارد کنید">
+                                            </div>
+                                            <div class="input-group basis-2/5 m-0">
+                                                <input type="text" class="input !sm:text-md !text-sm"
+                                                    placeholder="انتخاب تاریخ">
+                                            </div>
+                                            <div class="btns-group basis-1/5">
+                                                <button class="btn btn-primary-outline w-full remove-item">حذف</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btns-action mt-6">
+                                        <button class="btn btn-primary icon-right"><i class="fi fi-rs-check"></i>ثبت
+                                            قیمت</button>
+                                        <button class="btn btn-secondary-outline icon-right" id="add-form-payment"><i
+                                                class="fi fi-rs-add"></i>افزودن</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="side-grid">
+                                <div class="grid-sticky-top">
+                                    <div class="checkout-side">
+                                        <ul class="price-list">
+                                            <li>
+                                                <span class="title">قیمت کالاها (۳)</span>
+                                                <span class="number">440,655<small class="toman">تومان</small></span>
+                                            </li>
+                                            <li>
+                                                <span class="title">مجموع تخفیف</span>
+                                                <span class="number red">75,000<small class="toman">تومان</small></span>
+                                            </li>
+                                        </ul>
+                                        <div class="all-price" id="total-payment">
+                                            <span class="title">جمع پرداختی شما</span>
+                                            <span class="number">156,000<small class="toman">تومان</small></span>
+                                        </div>
+                                        <div class="all-price">
+                                            <span class="title">مبلغ قابل پرداخت</span>
+                                            <span class="number">156,000<small class="toman">تومان</small></span>
+                                        </div>
+                                        <span class="cart-msg">هزینه‌ی ارسال در ادامه بر اساس آدرس، زمان و نحوه‌ی ارسال
+                                            انتخابی شما‌
+                                            محاسبه و به این مبلغ اضافه خواهد شد</span>
+                                        <div class="buttons">
+                                            <a href="cart-information.html" class="btn btn-primary">ادامه فرآیند
+                                                خرید</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="side-basket" class="">
+        <button type="button" id="dismiss-basket">
+            <i class="fi fi-rs-cross-small"></i>
+        </button>
+        <!-- Basket Header -->
+        <div class="basket-header">
+            <h2 class="order-numbers">سبد خرید <span>(2 کالا)</span></h2>
+        </div>
+        <!-- Basket List Item -->
+        <div class="basket-list-item">
+            <div class="item">
+                <div class="item-inner">
+                    <div class="product-image">
+                        <a href="#">
+                            <img src="https://placehold.co/100x100" alt="pic-name" />
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <a href="#">
+                            <h3 class="name">نام محصول</h3>
+                        </a>
+                        <div class="data">
+                            <div class="price-content">
+                                <div class="price">
+                                    <div class="number" data-price="5200000"></div>
+                                    <span class="toman">تومان</span>
+                                </div>
+                                <div class="count">(2 عدد)</div>
+                            </div>
+                            <button type="button" class="btn-delete" onclick="deleteBasktet_item(this)"><i
+                                    class="fi fi-rs-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-inner">
+                    <div class="product-image">
+                        <a href="#">
+                            <img src="https://placehold.co/100x100" alt="pic-name" />
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <a href="#">
+                            <h3 class="name">نام محصول</h3>
+                        </a>
+                        <div class="data">
+                            <div class="price-content">
+                                <div class="price">
+                                    <div class="number" data-price="10200000"></div>
+                                    <span class="toman">تومان</span>
+                                </div>
+                                <div class="count">(2 عدد)</div>
+                            </div>
+                            <button type="button" class="btn-delete" onclick="deleteBasktet_item(this)"><i
+                                    class="fi fi-rs-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Empty Cart -->
+        <!-- <div class="empty-box">
+            <div class="thumb">
+                <img src="images/icon-shopping-bag.svg" alt="pic-name" />
+            </div>
+            <h6>سبد خرید شما خالی است</h6>
+        </div> -->
+        <!-- Pay Button -->
+        <div class="basket-pays">
+            <a href="cart-items-list.html" class="goto-cart">
+                <span class="count-price">549,000 تومان</span>
+                <span class="btn-text">تایید سفارش</span>
+            </a>
+        </div>
+    </div>
+    <div class="basket-overlay"></div>
+
+    <script src="js/scripts.js"></script>
+    <!-- <script src="plugins/jsPersianCal/js-persian-cal.min.js"></script> -->
+    <!-- <script src="plugins/jsPersianCal/js-persian-cal.initial.js"></script> -->
+
+</body>
+
+</html>
