@@ -1,0 +1,124 @@
+/*#region ----------------- Navbar Bottom */
+.navbar-bottom {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: $boxshadow_3_top;
+  z-index: 888;
+  .inner {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  .item {
+    padding: 5px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    h3 {
+      font-size: 13px;
+      font-weight: 500;
+      color: $textGrey;
+      text-align: center;
+      margin: 5px 0 0 0;
+      @include textTruncateLine();
+    }
+    .icon {
+      width: 24px;
+      height: 24px;
+      margin: 0 auto;
+      position: relative;
+      @include displayFlex(flex, center, center);
+      color: $textDark;
+      &::before {
+        content: "";
+        font-family: $iconFont_Regular;
+        font-size: 20px;
+      }
+    }
+    .badge {
+      position: absolute;
+      top: -8px;
+      right: -15px;
+      background-color: $primary;
+      color: white;
+    }
+    &.active {
+      .icon {
+        color: $textDark;
+        &::before {
+          font-family: $iconFont_Solid;
+        }
+      }
+      h3 {
+        color: $textDark;
+        font-weight: 600;
+      }
+    }
+    &.home {
+      .icon {
+        &::before {
+          content: "\f16c";
+        }
+      }
+      &.active {
+        .icon {
+          &::before {
+            content: "\f16d";
+          }
+        }
+      }
+    }
+    &.category {
+      .icon {
+        &::before {
+          content: "\f2b6";
+        }
+      }
+      &.active {
+        .icon {
+          &::before {
+            content: "\f2b7";
+          }
+        }
+      }
+    }
+    &.support {
+      .icon {
+        &::before {
+          content: "\f93d";
+        }
+      }
+      &.active {
+        .icon {
+          &::before {
+            content: "\f92f";
+          }
+        }
+      }
+    }
+    &.user {
+      .icon {
+        &::before {
+          content: "\fea0";
+        }
+      }
+      &.active {
+        .icon {
+          &::before {
+            content: "\fe8d";
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-bottom {
+    display: block;
+  }
+}
+/*#endregion -------------- Navbar Bottom */

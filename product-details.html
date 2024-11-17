@@ -42,11 +42,6 @@
                         <i class="fi fi-rs-apps"></i><span class="title">داشبورد</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="sub-item" href="user-profile.html">
-                        <i class="fi fi-rs-user"></i><span class="title">اطلاعات پروفایل</span>
-                    </a>
-                </li>
                 <li class="nav-item active">
                     <a class="sub-item" href="products-list.html">
                         <i class="fi fi-rs-box"></i><span class="title">محصولات</span>
@@ -54,13 +49,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="sub-item" href="points-list.html">
-                        <i class="fi fi-rs-star"></i><span class="title">لیست امتیازات</span>
+                    <a class="sub-item" href="support.html">
+                        <i class="fi fi-rs-messages"></i><span class="title">پشتیبانی</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="sub-item" href="support.html">
-                        <i class="fi fi-rs-messages"></i><span class="title">پشتیبانی</span>
+                    <a class="sub-item" href="user-profile.html">
+                        <i class="fi fi-rs-user"></i><span class="title">اطلاعات پروفایل</span>
                     </a>
                 </li>
             </ul>
@@ -83,10 +78,10 @@
                 </div>
                 <div class="admin">
                     <div class="item">
-                        <button class="btn-navbar btn-basket">
+                        <a href="cart-items-list.html" class="btn-navbar btn-basket">
                             <i class="fi fi-rs-shopping-bag"></i>
                             <div class="badge badge-danger badge-s">13</div>
-                        </button>
+                        </a>
                     </div>
                     <div class="dropdown">
                         <button class="btn btn-secondary-outline dropdown-toggle icon-right" type="button">
@@ -233,84 +228,29 @@
         </div>
     </div>
 
-    <!-- Sidebar -->
-    <div id="side-basket" class="">
-        <button type="button" id="dismiss-basket">
-            <i class="fi fi-rs-cross-small"></i>
-        </button>
-        <!-- Basket Header -->
-        <div class="basket-header">
-            <h2 class="order-numbers">سبد خرید <span>(2 کالا)</span></h2>
-        </div>
-        <!-- Basket List Item -->
-        <div class="basket-list-item">
-            <div class="item">
-                <div class="item-inner">
-                    <div class="product-image">
-                        <a href="#">
-                            <img src="https://placehold.co/100x100" alt="pic-name" />
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <a href="#">
-                            <h3 class="name">نام محصول</h3>
-                        </a>
-                        <div class="data">
-                            <div class="price-content">
-                                <div class="price">
-                                    <div class="number" data-price="5200000"></div>
-                                    <span class="toman">تومان</span>
-                                </div>
-                                <div class="count">(2 عدد)</div>
-                            </div>
-                            <button type="button" class="btn-delete" onclick="deleteBasktet_item(this)"><i
-                                    class="fi fi-rs-trash"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-inner">
-                    <div class="product-image">
-                        <a href="#">
-                            <img src="https://placehold.co/100x100" alt="pic-name" />
-                        </a>
-                    </div>
-                    <div class="product-info">
-                        <a href="#">
-                            <h3 class="name">نام محصول</h3>
-                        </a>
-                        <div class="data">
-                            <div class="price-content">
-                                <div class="price">
-                                    <div class="number" data-price="10200000"></div>
-                                    <span class="toman">تومان</span>
-                                </div>
-                                <div class="count">(2 عدد)</div>
-                            </div>
-                            <button type="button" class="btn-delete" onclick="deleteBasktet_item(this)"><i
-                                    class="fi fi-rs-trash"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Empty Cart -->
-        <!-- <div class="empty-box">
-            <div class="thumb">
-                <img src="images/icon-shopping-bag.svg" alt="pic-name" />
-            </div>
-            <h6>سبد خرید شما خالی است</h6>
-        </div> -->
-        <!-- Pay Button -->
-        <div class="basket-pays">
-            <a href="cart-items-list.html" class="goto-cart">
-                <span class="count-price">549,000 تومان</span>
-                <span class="btn-text">تایید سفارش</span>
+    <!-- Navbar Bottom -->
+    <div class="navbar-bottom">
+        <div class="inner">
+            <a href="index.html" class="item home">
+                <div class="icon"></div>
+                <h3>داشبورد</h3>
+            </a>
+            <a href="products-list.html" class="item category active">
+                <div class="icon"></div>
+                <h3>محصولات</h3>
+            </a>
+            <a href="support.html" class="item support">
+                <div class="icon"><span class="badge badge-m">3</span></div>
+                <h3>پشتیبانی</h3>
+
+            </a>
+            <a href="user-profile.html" class="item user">
+                <div class="icon"></div>
+                <h3>پروفایل</h3>
             </a>
         </div>
     </div>
-    <div class="basket-overlay"></div>
+
 
     <script src="plugins/swiperjs/swiper-bundle.min.js"></script>
     <script src="plugins/swiperjs/swiper-initial.js"></script>
