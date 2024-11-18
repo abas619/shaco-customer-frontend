@@ -157,3 +157,21 @@ if (document.getElementById("list-payment") != null) {
       }
     });
 }
+
+// Tabs
+if (document.querySelectorAll(".nav-link") != null) {
+  const tabsButtons = document.querySelectorAll(".nav-link");
+  const tabPans = document.querySelectorAll(".tab-pane");
+  tabsButtons.forEach((tabBtn, i) => {
+    tabBtn.onclick = () => {
+      tabPans.forEach((tabpane) => {
+        tabpane.classList.add("hidden");
+      });
+      tabsButtons.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+      tabBtn.classList.add("active");
+      tabPans[i].classList.remove("hidden");
+    };
+  });
+}

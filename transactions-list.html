@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fa" class="no-js" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0e4fc7" />
+    <meta name="msapplication-navbutton-color" content="#0e4fc7">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0e4fc7">
+    <title>Shaco | پنل مدیریت</title>
+    <script src="js/tailwindcss.js"></script>
+    <script src="js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="scss/main.css" />
+
+    <!-- Font Icons -->
+    <link href="css/uicons-regular-straight.css" rel="stylesheet" type="text/css" />
+    <link href="css/uicons-solid-straight.css" rel="stylesheet" type="text/css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/small-icon.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logo-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/logo-114x114.png" />
+
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!--Sidebar-->
+        <nav id="sidebar">
+            <button class="btn-close-sidebar"><i class="fi fi-rs-cross"></i></button>
+            <div class="logo">
+                <img src="images/logo.png" alt="logo">
+            </div>
+            <ul class="list-nav">
+                <li class="nav-item">
+                    <a class="sub-item" href="index.html">
+                        <i class="fi fi-rs-apps"></i><span class="title">داشبورد</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="sub-item" href="products-list.html">
+                        <i class="fi fi-rs-box"></i><span class="title">محصولات</span>
+                        <div class="badge badge-secondary badge-s">5</div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="sub-item" href="cart-items-list.html">
+                        <i class="fi fi-rs-shopping-bag"></i><span class="title">سبد خرید</span>
+                        <div class="badge badge-secondary badge-s">3</div>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="sub-item" href="transactions-list.html">
+                        <i class="fi fi-rs-memo-circle-check"></i><span class="title">سوابق سفارش</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="sub-item" href="user-profile.html">
+                        <i class="fi fi-rs-user"></i><span class="title">اطلاعات پروفایل</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="siderbar-overlay"></div>
+        <!--Page Content-->
+        <div id="content">
+            <nav id="mynavbar">
+                <div class="collapse-sidebar">
+                    <button type="button" id="sidebarCollapse" class="btn btn-side">
+                        <span class="menu-lines">
+                            <span class="line line-1"></span>
+                            <span class="line line-2"></span>
+                            <span class="line line-3"></span>
+                        </span>
+                    </button>
+                </div>
+                <div class="logo">
+                    <img src="images/logo.png" alt="logo">
+                </div>
+                <div class="admin">
+                    <div class="item">
+                        <a href="support.html" class="btn-navbar">
+                            <i class="fi fi-rs-headphones"></i>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary-outline dropdown-toggle icon-right" type="button">
+                            <i class="fi fi-rs-user"></i>
+                            <span>نام کاربری</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="https://shacoiran.ir/" class="dropdown-item"><i class="fi fi-rs-eye"></i>
+                                مشاهده سایت شاکو
+                            </a>
+                            <a href="#" class="dropdown-item"><i class="fi fi-rs-settings"></i>
+                                تنظیمات
+                            </a>
+                            <hr class="my-2">
+                            <a href="login.html" class="dropdown-item" data-modal-name="modal-exit"><i
+                                    class="fi fi-rs-exit"></i>خروج از پنل</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!--Body Content-->
+            <div class="main-body-content">
+                <div class="main-header">
+                    <div class="inner">
+                        <div class="title">
+                            <h2><i class="fi fi-rs-memo-circle-check"></i>سوابق سفارش</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-inner">
+                    <div class="nav nav-tabs flex items-center justify-start mt-5" role="tablist">
+                        <button class="nav-link active" role="tab">
+                            <span class="name">در حال پردازش</span>
+                            <span class="mr-1">(1)</span>
+                        </button>
+                        <button class="nav-link" role="tab">
+                            <span class="name">همه سفارش‌ها</span>
+                            <span class="mr-1">(169)</span>
+                        </button>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane">
+                            <div class="tab-inner">
+                                <div class="card-transaction">
+                                    <div class="card-inner">
+                                        <ul class="list-info">
+                                            <li>
+                                                <span class="title">شماره سفارش :</span>
+                                                <span class="desc">1</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">مبلغ پرداختی :</span>
+                                                <span class="desc">18,000,000 تومان</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">تاریخ و زمان ثبت :</span>
+                                                <span class="desc">21 اسفند 1403 - 12:30</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">تاریخ و زمان تحویل :</span>
+                                                <span class="desc">25 اسفند 1403 - 12:30</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">تعداد کالا :</span>
+                                                <span class="desc">2</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">وضعیت پرداخت :</span>
+                                                <span class="desc info">منتظر بررسی</span>
+                                            </li>
+                                        </ul>
+                                        <div class="c-footer">
+                                            <div class="status">
+                                                <h6>وضعیت سفارش : <span class="success">ارسال شد</span></h6>
+                                            </div>
+                                            <a href="transactions-details.html" class="btn btn-primary">مشاهده بیشتر</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-transaction">
+                                    <div class="card-inner">
+                                        <ul class="list-info">
+                                            <li>
+                                                <span class="title">شماره سفارش :</span>
+                                                <span class="desc">1</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">مبلغ پرداختی :</span>
+                                                <span class="desc">18,000,000 تومان</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">تاریخ و زمان ثبت :</span>
+                                                <span class="desc">21 اسفند 1403 - 12:30</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">تاریخ و زمان تحویل :</span>
+                                                <span class="desc">25 اسفند 1403 - 12:30</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">تعداد کالا :</span>
+                                                <span class="desc">2</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">وضعیت پرداخت :</span>
+                                                <span class="desc success">موفق</span>
+                                            </li>
+                                        </ul>
+                                        <div class="c-footer">
+                                            <div class="status">
+                                                <h6>وضعیت سفارش : <span class="error">لغو سفارش</span></h6>
+                                            </div>
+                                            <a href="transactions-details.html" class="btn btn-primary">مشاهده بیشتر</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-transaction">
+                                    <div class="card-inner">
+                                        <ul class="list-info">
+                                            <li>
+                                                <span class="title">شماره سفارش :</span>
+                                                <span class="desc">1</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">مبلغ پرداختی :</span>
+                                                <span class="desc">18,000,000 تومان</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">تاریخ و زمان ثبت :</span>
+                                                <span class="desc">21 اسفند 1403 - 12:30</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">تاریخ و زمان تحویل :</span>
+                                                <span class="desc">25 اسفند 1403 - 12:30</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">تعداد کالا :</span>
+                                                <span class="desc">2</span>
+                                            </li>
+                                            <li>
+                                                <span class="title">وضعیت پرداخت :</span>
+                                                <span class="desc error">پرداخت ناموفق</span>
+                                            </li>
+                                        </ul>
+                                        <div class="c-footer">
+                                            <div class="status">
+                                                <h6>وضعیت سفارش : <span class="waiting">در حال پردازش</span></h6>
+                                            </div>
+                                            <a href="transactions-details.html" class="btn btn-primary">مشاهده بیشتر</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane hidden">
+                            <div class="tab-inner">
+                                Tab 2
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar Bottom -->
+    <div class="navbar-bottom">
+        <div class="inner">
+            <a href="index.html" class="item home">
+                <div class="icon"></div>
+                <h3>داشبورد</h3>
+            </a>
+            <a href="products-list.html" class="item category">
+                <div class="icon"></div>
+                <h3>محصولات</h3>
+            </a>
+            <a href="support.html" class="item shopping-bag">
+                <div class="icon"><span class="badge badge-m">3</span></div>
+                <h3>سبدخرید</h3>
+            </a>
+            <a href="transactions-list.html" class="item transaction active">
+                <div class="icon"></div>
+                <h3>سوابق سفارش</h3>
+            </a>
+            <a href="user-profile.html" class="item user">
+                <div class="icon"></div>
+                <h3>پروفایل</h3>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>

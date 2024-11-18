@@ -10,7 +10,7 @@
   z-index: 888;
   .inner {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
   }
   .item {
     padding: 5px;
@@ -23,7 +23,7 @@
       color: $textGrey;
       text-align: center;
       margin: 5px 0 0 0;
-      @include textTruncateLine();
+      @include textTruncate(1);
     }
     .icon {
       width: 24px;
@@ -58,65 +58,64 @@
       }
     }
     &.home {
-      .icon {
-        &::before {
-          content: "\f16c";
-        }
+      .icon::before {
+        content: "\f16c";
       }
       &.active {
-        .icon {
-          &::before {
-            content: "\f16d";
-          }
+        .icon::before {
+          content: "\f16d";
         }
       }
     }
     &.category {
-      .icon {
-        &::before {
-          content: "\f2b6";
-        }
+      .icon::before {
+        content: "\f2b6";
       }
       &.active {
-        .icon {
-          &::before {
-            content: "\f2b7";
-          }
+        .icon::before {
+          content: "\f2b7";
         }
       }
     }
-    &.support {
-      .icon {
-        &::before {
-          content: "\f93d";
-        }
+    &.shopping-bag {
+      .icon::before {
+        content: "\f93d";
       }
       &.active {
-        .icon {
-          &::before {
-            content: "\f92f";
-          }
+        .icon::before {
+          content: "\f92f";
+        }
+      }
+    }
+    &.transaction {
+      .icon::before {
+        content: "\f926";
+      }
+      &.active {
+        .icon::before {
+          content: "\f917";
         }
       }
     }
     &.user {
-      .icon {
-        &::before {
-          content: "\fea0";
-        }
+      .icon::before {
+        content: "\fea0";
       }
       &.active {
-        .icon {
-          &::before {
-            content: "\fe8d";
-          }
+        .icon::before {
+          content: "\fe8d";
         }
       }
     }
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
+  .navbar-bottom {
+    display: block;
+  }
+}
+@media (max-width: 575px) {
   .navbar-bottom {
     display: block;
   }

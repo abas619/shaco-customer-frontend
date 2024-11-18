@@ -1,0 +1,35 @@
+/*#region ----------------- Table */
+.table-custom {
+  width: 100%;
+  border: 1px solid $borderColor;
+  thead {
+    background-color: $background_light2;
+    border-bottom: 1px solid $borderColor;
+    th {
+      padding: 12px;
+      font-size: 14px;
+    }
+  }
+  tbody {
+    td {
+      padding: 12px;
+      font-size: 14px;
+      font-weight: 400;
+      border-bottom: 1px solid $borderColor;
+    }
+  }
+  .img-table {
+    width: 50px;
+  }
+  .btns-action {
+    @include displayFlex(flex, center, center);
+    flex-wrap: wrap;
+    .btn-circle {
+      margin: 5px;
+    }
+  }
+}
+.table-responsive {
+  overflow-x: auto;
+}
+/*#endregion -------------- Table */
