@@ -12,7 +12,7 @@
     <script src="js/tailwindcss.js"></script>
     <script src="js/tailwind.config.js"></script>
     <link rel="stylesheet" href="scss/main.css" />
-    <!-- <link rel="stylesheet" href="plugins/jsPersianCal/js-persian-cal.css" /> -->
+    <link rel="stylesheet" href="plugins/persian-calender/persian-datepicker.css" />
 
     <!-- Font Icons -->
     <link href="css/uicons-regular-straight.css" rel="stylesheet" type="text/css" />
@@ -135,37 +135,33 @@
                                 </div>
                                 <div class="p-5 my-3 border border-borderColor rounded-md">
                                     <h4 class="text-md font-bold mb-4">پرداخت نقدی (تومان)</h4>
-                                    <div class="grid grid-cols-[1fr,100px] gap-2">
-                                        <div class="input-group m-0">
-                                            <input type="text" class="input" placeholder="به تومان وارد کنید"
-                                                onkeyup="javascript:this.value=separate(this.value)">
-                                        </div>
-                                        <div class="btns-action">
-                                            <button class="btn btn-primary w-full">ثبت</button>
-                                        </div>
+                                    <div class="input-group m-0">
+                                        <input type="text" class="input" placeholder="به تومان وارد کنید"
+                                            onkeyup="this.value=separate(this.value)">
                                     </div>
                                 </div>
                                 <div class="installment-payment-section p-5 my-3 border border-borderColor rounded-md">
                                     <h4 class="text-md font-bold mb-4">پرداخت قسطی (تومان)</h4>
                                     <div id="list-payment">
-                                        <div class="card-payment flex flex-row gap-2 mb-3">
-                                            <div class="input-group basis-2/5 m-0">
+                                        <div class="card-payment grid grid-cols-[1fr,1fr,48px] gap-2 mb-3">
+                                            <div class="input-group m-0">
                                                 <input type="text" class="input !sm:text-md !text-sm"
                                                     placeholder="به تومان وارد کنید"
-                                                    onkeyup="javascript:this.value=separate(this.value)">
+                                                    onkeyup="this.value=separate(this.value)">
                                             </div>
-                                            <div class="input-group basis-2/5 m-0">
-                                                <input type="text" class="input !sm:text-md !text-sm"
+                                            <div class="input-group m-0 relative">
+                                                <input type="text" class="input date-picker !sm:text-md !text-sm"
                                                     placeholder="انتخاب تاریخ">
                                             </div>
-                                            <div class="btns-group basis-1/5">
-                                                <button class="btn btn-primary-outline w-full remove-item">حذف</button>
+                                            <div class="btns-group">
+                                                <button
+                                                    class="btn btn-primary-outline border-red-500 text-red-500 hover:bg-red-500 hover:text-white w-full remove-item p-0 w-12 h-12">
+                                                    <i class="fi fi-rs-trash relative top-1"></i>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="btns-action mt-6">
-                                        <button class="btn btn-primary icon-right"><i class="fi fi-rs-check"></i>ثبت
-                                            قیمت</button>
                                         <button class="btn btn-secondary-outline icon-right" id="add-form-payment"><i
                                                 class="fi fi-rs-add"></i>افزودن</button>
                                     </div>
@@ -186,7 +182,7 @@
                                         </ul>
                                         <div class="all-price" id="total-payment">
                                             <span class="title">جمع پرداختی شما</span>
-                                            <span class="number">156,000<small class="toman">تومان</small></span>
+                                            <span class="number">0<small class="toman">تومان</small></span>
                                         </div>
                                         <div class="all-price">
                                             <span class="title">مبلغ قابل پرداخت</span>
@@ -236,9 +232,11 @@
     </div>
 
 
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/scripts.js"></script>
-    <!-- <script src="plugins/jsPersianCal/js-persian-cal.min.js"></script> -->
-    <!-- <script src="plugins/jsPersianCal/js-persian-cal.initial.js"></script> -->
+    <script src="plugins/persian-calender/persian-date.min.js"></script>
+    <script src="plugins/persian-calender/persian-datepicker.min.js"></script>
+    <script src="plugins/persian-calender/persian-datepicker-initial.js"></script>
 
 </body>
 

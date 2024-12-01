@@ -1,1 +1,1 @@
-var objCal_from = new AMIB.persianCalendar("select-calendar-from");
+var objCal_from = new AMIB.persianCalendar(".input");

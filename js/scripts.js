@@ -73,18 +73,6 @@ if (document.querySelector("[data-price]")) {
   }
 }
 
-// جدا کردن 3 رقم
-function separate(Number) {
-  Number += "";
-  Number = Number.replace(",", "");
-  x = Number.split(".");
-  y = x[0];
-  z = x.length > 1 ? "." + x[1] : "";
-  var rgx = /(\d+)(\d{3})/;
-  while (rgx.test(y)) y = y.replace(rgx, "$1" + "," + "$2");
-  return y + z;
-}
-
 // Login
 if (document.querySelector(".login-section") != null) {
   var modalSignContent = document.querySelectorAll(".login-section");
@@ -119,45 +107,6 @@ function changeValue(inputId, increment) {
   }
 }
 
-// Payment
-if (document.getElementById("list-payment") != null) {
-  document
-    .getElementById("add-form-payment")
-    .addEventListener("click", function () {
-      // ایجاد یک عنصر جدید برای لیست پرداخت
-      const paymentItem = document.createElement("div");
-      paymentItem.className = "card-payment flex flex-row gap-2 mb-3";
-
-      // محتوای HTML مربوط به آیتم جدید
-      paymentItem.innerHTML = `
-          <div class="input-group basis-2/5 m-0">
-              <input type="text" class="input !sm:text-md !text-sm"
-                  placeholder="به تومان وارد کنید" onkeyup="javascript:this.value=separate(this.value)">
-          </div>
-          <div class="input-group basis-2/5 m-0">
-              <input type="text" class="input !sm:text-md !text-sm"
-                  placeholder="انتخاب تاریخ">
-          </div>
-          <div class="btns-group basis-1/5">
-              <button class="btn btn-primary-outline w-full remove-item">حذف</button>
-          </div>
-      `;
-
-      // اضافه کردن آیتم به لیست پرداخت
-      document.getElementById("list-payment").appendChild(paymentItem);
-    });
-
-  // مدیریت دکمه حذف
-  document
-    .getElementById("list-payment")
-    .addEventListener("click", function (event) {
-      if (event.target.classList.contains("remove-item")) {
-        // حذف آیتم مربوطه
-        event.target.closest(".card-payment").remove();
-      }
-    });
-}
-
 // Tabs
 if (document.querySelectorAll(".nav-link") != null) {
   const tabsButtons = document.querySelectorAll(".nav-link");
@@ -175,3 +124,114 @@ if (document.querySelectorAll(".nav-link") != null) {
     };
   });
 }
+
+// جدا کردن ۳ رقم
+function separate(Number) {
+  Number = Number.replace(/,/g, "");
+  let parts = Number.split(".");
+  let integerPart = parts[0];
+  let decimalPart = parts.length > 1 ? "." + parts[1] : "";
+  let rgx = /(\d+)(\d{3})/;
+  while (rgx.test(integerPart)) {
+    integerPart = integerPart.replace(rgx, "$1" + "," + "$2");
+  }
+  return integerPart + decimalPart;
+}
+
+// جمع پرداختی ها
+function updateTotalPayment() {
+  let total = 0;
+
+  // نقدی
+  const cashInput = document.querySelector(".input-group input");
+  if (cashInput && cashInput.value) {
+    const cashValue = parseInt(cashInput.value.replace(/,/g, ""), 10);
+    if (!isNaN(cashValue)) {
+      total += cashValue;
+    }
+  }
+
+  // قسطی
+  document
+    .querySelectorAll("#list-payment .input-group input")
+    .forEach((input) => {
+      if (input.value) {
+        const installmentValue = parseInt(input.value.replace(/,/g, ""), 10);
+        if (!isNaN(installmentValue)) {
+          total += installmentValue;
+        }
+      }
+    });
+
+  // به‌روزرسانی جمع پرداختی
+  const totalElement = document.querySelector("#total-payment .number");
+  totalElement.innerHTML =
+    separate(total.toString()) + `<small class="toman">تومان</small>`;
+}
+
+function addInputEventListeners() {
+  document
+    .querySelectorAll("#list-payment .input-group input")
+    .forEach((input) => {
+      input.addEventListener("keyup", function () {
+        this.value = separate(this.value);
+        updateTotalPayment();
+      });
+    });
+  const cashInput = document.querySelector(".input-group input");
+  if (cashInput) {
+    cashInput.addEventListener("keyup", function () {
+      this.value = separate(this.value);
+      updateTotalPayment();
+    });
+  }
+}
+
+// دکمه افزودن قسط جدید
+if (document.getElementById("list-payment") != null) {
+  document
+    .getElementById("add-form-payment")
+    .addEventListener("click", function () {
+      const paymentItem = document.createElement("div");
+      paymentItem.className =
+        "card-payment grid grid-cols-[1fr,1fr,48px] gap-2 mb-3";
+      paymentItem.innerHTML = `
+          <div class="input-group m-0">
+              <input type="text" class="input !sm:text-md !text-sm"
+                  placeholder="به تومان وارد کنید" onkeyup="this.value=separate(this.value); updateTotalPayment();">
+          </div>
+          <div class="input-group m-0">
+              <input type="text" class="input date-picker !sm:text-md !text-sm"
+                  placeholder="انتخاب تاریخ">
+          </div>
+          <button
+              class="btn btn-primary-outline border-red-500 text-red-500 hover:bg-red-500 hover:text-white w-full remove-item p-0 w-12 h-12">
+              <i class="fi fi-rs-trash relative top-1"></i>
+          </button>
+      `;
+
+      document.getElementById("list-payment").appendChild(paymentItem);
+
+      $(paymentItem).find(".date-picker").persianDatepicker({
+        observer: true,
+        format: "YYYY/MM/DD",
+        autoClose: true,
+        initialValue: true,
+      });
+
+      addInputEventListeners();
+      updateTotalPayment();
+    });
+
+  // مدیریت دکمه حذف
+  document
+    .getElementById("list-payment")
+    .addEventListener("click", function (event) {
+      if (event.target.classList.contains("remove-item")) {
+        event.target.closest(".card-payment").remove();
+        updateTotalPayment();
+      }
+    });
+}
+
+addInputEventListeners();
